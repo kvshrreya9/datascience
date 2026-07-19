@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+
+    <style>
+
+        body{
+            text-align:center;
+            font-family:Arial;
+            background-image:url("{{ url_for('static', filename='iris.webp') }}");
+            background-size:cover;
+            background-position:center;
+            background-repeat:no-repeat;
+            min-height:100vh;
+        }
+
+        h1{
+            color:rgb(62, 23, 237);
+            font-size:55px;
+            margin-top:40px;
+        }
+
+        h2{
+            color:rgb(164, 149, 249);
+            font-size:40px;
+        }
+
+        img{
+            width:500px;
+            border-radius:20px;
+            box-shadow:0 0 15px black;
+            margin-top:20px;
+        }
+
+        .back-btn{
+            background-color:hotpink;
+            color:white;
+            padding:18px 35px;
+            border-radius:10px;
+            text-decoration:none;
+            font-weight:bold;
+            font-size:24px;
+            display:inline-block;
+            margin-top:30px;
+        }
+
+        .back-btn:hover{
+            background-color:deeppink;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<h1>Predicted Flower</h1>
+
+<h2>{{ result }}</h2>
+
+<img src="{{ url_for('static', filename=image) }}">
+
+<br><br>
+
+<a href="/" class="back-btn">Predict Again</a>
+
+</body>
+</html>
