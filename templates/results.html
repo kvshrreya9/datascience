@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Result</title>
+
+<style>
+
+body{
+
+text-align:center;
+
+font-family:Arial;
+
+background-image:url("{{ url_for('static', filename='bg.jpeg') }}");
+
+background-size:cover;
+
+color:rgb(64, 24, 243);
+}
+
+h1{
+font-size:50px;
+}
+
+.card{
+
+background:rgba(0,0,0,0.4);
+
+width:800px;
+
+margin:auto;
+
+padding:30px;
+
+border-radius:20px;
+}
+
+p{
+font-size:28px;
+}
+
+img{
+
+width:700px;
+
+border-radius:20px;
+}
+
+.back-btn{
+
+background:hotpink;
+
+padding:15px 30px;
+
+border-radius:10px;
+
+color:rgb(65, 33, 245);
+
+text-decoration:none;
+
+font-size:22px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>{{ state }}</h1>
+
+<div class="card">
+
+<p>Average Unemployment Rate : {{ avg_rate }}%</p>
+
+<p>Highest Unemployment Rate : {{ max_rate }}%</p>
+
+<p>Lowest Unemployment Rate : {{ min_rate }}%</p>
+
+<p>Average Employment : {{ employed }}</p>
+
+<img src="{{ url_for('static', filename='graph.png') }}">
+
+<br><br>
+
+<a href="/" class="back-btn">
+Analyze Another State
+</a>
+
+</div>
+
+</body>
+
+</html>

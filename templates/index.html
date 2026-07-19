@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Unemployment Analysis</title>
+
+<style>
+
+body{
+background-image:url("{{ url_for('static', filename='bg.jpeg') }}");
+background-size:cover;
+height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-family:Arial;
+}
+
+.container{
+
+width:700px;
+
+background:rgba(255,255,255,0.2);
+
+backdrop-filter:blur(8px);
+
+padding:50px;
+
+border-radius:20px;
+
+text-align:center;
+}
+
+h1{
+font-size:45px;
+color:rgb(53, 32, 244);
+}
+
+select{
+
+width:90%;
+
+padding:15px;
+
+font-size:22px;
+
+border-radius:10px;
+}
+
+button{
+
+margin-top:20px;
+
+padding:15px 30px;
+
+font-size:22px;
+
+background:hotpink;
+
+color:rgb(255, 255, 255);
+
+border:none;
+
+border-radius:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Unemployment Analysis Dashboard</h1>
+
+<form action="/analyze" method="POST">
+
+<select name="state">
+
+{% for state in states %}
+
+<option value="{{ state }}">
+{{ state }}
+</option>
+
+{% endfor %}
+
+</select>
+
+<br><br>
+
+<button type="submit">
+Analyze
+</button>
+
+</form>
+
+</div>
+
+</body>
+
+</html>
