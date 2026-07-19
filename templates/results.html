@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Prediction Result</title>
+
+<style>
+
+body{
+    background-image:url("{{ url_for('static', filename='carbg.webp') }}");
+    background-size:cover;
+    background-position:center;
+
+    text-align:center;
+    font-family:Arial;
+}
+
+.box{
+
+    width:800px;
+
+    margin:auto;
+
+    margin-top:50px;
+
+    background:rgba(237, 236, 243, 0.936);
+
+    padding:30px;
+
+    border-radius:20px;
+}
+
+h1{
+    color:hotpink;
+    font-size:50px;
+}
+
+h2{
+    color:white;
+    font-size:40px;
+}
+
+img{
+    width:500px;
+    border-radius:20px;
+}
+
+.back-btn{
+
+    background:hotpink;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:15px 30px;
+
+    border-radius:10px;
+
+    font-size:22px;
+}
+body{
+    background-image:url("{{ url_for('static', filename='carbg.avif') }}");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    min-height:100vh;
+
+    text-align:center;
+    font-family:Arial, sans-serif;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>Predicted Car Price</h1>
+
+<h2>₹ {{ price }} Lakhs</h2>
+
+<h3>{{ recommendation }}</h3>
+
+<p>Present Price: ₹ {{ present_price }} Lakhs</p>
+
+<p>Fuel Type: {{ fuel }}</p>
+
+<p>Transmission: {{ transmission }}</p>
+
+<p>Owner Count: {{ owner }}</p>
+
+<p>Manufacturing Year: {{ year }}</p>
+
+</div>
+
+<br><br>
+
+<a href="/" class="back-btn">
+Predict Again
+</a>
+
+</div>
+
+</body>
+</html>
